@@ -1,0 +1,55 @@
+@import "src/assets/variable";
+@import "src/assets/media";
+
+.navbar-main {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  background: var(--primaryColor);
+  background: linear-gradient(90deg, var(--primaryColor) 0%, var(--accentColor) 100%);
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  @include phones-small() {
+    font-size: 12px;
+  }
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+}
+
+.exit-app {
+  cursor: pointer;
+  margin-left: 10px;
+  width: 28px;
+  @include phones-small() {
+    width: 25px;
+  }
+}
+
+.theme-toggle-main {
+  display: flex;
+  margin-right: 5px;
+  align-items: center;
+  color: #fff;
+  div {
+    margin: 0 10px;
+  }
+
+  div.visible {
+    visibility: hidden;
+  }
+
+  @include phones-small() {
+    .theme-toggle-main {
+      margin-right: 0;
+    }
+  }
+}

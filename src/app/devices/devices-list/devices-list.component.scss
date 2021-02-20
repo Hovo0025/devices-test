@@ -1,0 +1,71 @@
+@import "src/assets/variable";
+@import "src/assets/media";
+
+.container-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: calc(100vh - 130px);
+  padding: 30px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include phones-medium() {
+    padding: 0;
+    height: calc(100vh - 70px);
+  }
+}
+
+.example-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.example-table-container {
+  position: relative;
+  height: 100%;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.example-loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-rate-limit-reached {
+  color: #980000;
+  max-width: 360px;
+  text-align: center;
+}
+
+/* Column Widths */
+.mat-column-number,
+.mat-column-state {
+  max-width: 64px;
+}
+
+.mat-column-created {
+  max-width: 124px;
+}
+
+td {
+  font-size: 16px!important;
+  @include phones-medium() {
+    font-size: 14px!important;
+    padding: 0 3px!important;
+  }
+}

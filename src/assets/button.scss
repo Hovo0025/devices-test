@@ -1,0 +1,24 @@
+button.main {
+  display: flex;
+  border-radius: 4px;
+  font-size: 16px;
+  height: 38px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+
+.dark-theme .mat-stroked-button.mat-accent {
+  color: rgba(0, 0, 0, 0.26)!important;
+  border-color: rgba(0, 0, 0, 0.26)!important;
+}
+
+.dark-theme .mat-stroked-button:not([disabled]) {
+  color: var(--accentColor)!important;
+  border-color: var(--accentColor)!important;
+}
+
+.dark-theme .mat-form-field-appearance-legacy .mat-form-field-label {
+  color: var(--accentColor)!important;
+}

@@ -1,0 +1,37 @@
+@import "variable";
+
+@mixin tablets {
+  @media screen and (max-width: $tablets) {
+    @content;
+  }
+}
+
+@mixin ipad {
+  @media screen and (max-width: $ipad) {
+    @content;
+  }
+}
+
+@mixin birman-media {
+  @media screen and (max-width: $birman-media) {
+    @content;
+  }
+}
+
+@mixin phones-large {
+  @media screen and (max-width: $phones-large) {
+    @content;
+  }
+}
+
+@mixin phones-medium {
+	@media screen and (max-width: $phones-medium) {
+		@content;
+	}
+}
+
+@mixin phones-small {
+	@media screen and (max-width: $phones-small) {
+		@content;
+	}
+}

@@ -1,0 +1,15 @@
+.sign-up {
+  display: flex;
+  flex-flow: column;
+  padding: 30px;
+}
+
+button.main {
+  margin-top: 40px;
+}
+
+.error-msg {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 15px;
+}

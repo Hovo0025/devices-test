@@ -1,0 +1,84 @@
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+@import "./light-theme-colors";
+@import "./dark-theme-colors";
+
+// angular materila typography
+$app-typography: mat-typography-config(
+  $font-family: "Montserrat, sans-serif",
+  $headline: mat-typography-level(30px, 37px, 600),
+  $title: mat-typography-level(25px, 37.5px, 600),
+  $body-1: mat-typography-level(17px, 27px, 300),
+  $body-2: mat-typography-level(18px, 27px, 500),
+  $button: mat-typography-level(15px, 19px, 400),
+  $subheading-2: mat-typography-level(18px, 1.3 * 18px, 400),
+  $subheading-1: mat-typography-level(15px, 20px, 400),
+  $caption: mat-typography-level(12px, 18px, 400)
+);
+
+@include mat-core($app-typography);
+
+// Define the default theme (same as the example above).
+$light-theme-primary-pallete: mat-palette($light-theme-primary-color, 500);
+$light-theme-accent-pallete: mat-palette($light-theme-accent-color, 500);
+$light-theme: mat-light-theme($light-theme-primary-pallete, $light-theme-accent-pallete);
+
+.light-theme {
+  // Include the default theme styles.
+  @include angular-material-theme($light-theme);
+  --background: #ffffff;
+  --textColor: #3d3d3d;
+  --primaryColor: #{mat-color($light-theme-primary-pallete)};
+  --primaryContrast: #{mat-color($light-theme-primary-pallete, default-contrast)};
+  --accentColor: #{mat-color($light-theme-accent-pallete)};
+  --accentContrast: #{mat-color($light-theme-accent-pallete, default-contrast)};
+  --warnColor: #{mat-color(mat-palette($mat-red))};
+  --warnContrast: #{mat-color(mat-palette($mat-red), default-contrast)};
+  --lightGreyColor: #f5f5f5;
+  --tabsBackground: #f5f5f5;
+  --toorcomInputBackground: #ebebeb;
+  --greyColor: #757575;
+  --disabledColor: #757575;
+  --overlayBackground: #{mat-color(map-get($light-theme, background), card)};
+  & .sidebar {
+    background-color: #1f2e3d !important;
+  }
+}
+
+// Define an alternate dark theme.
+$dark-theme-primary-pallete: mat-palette($dark-theme-primary-color, 500, A200);
+$dark-theme-accent-pallete: mat-palette($dark-theme-accent-color, 500, A200);
+$dark-theme: mat-dark-theme($dark-theme-primary-pallete, $dark-theme-accent-pallete);
+
+// Include the alternative theme styles inside of a block with a CSS class. You can make this
+// CSS class whatever you want. In this example, any component inside of an element with
+// `.dart-dark-theme` will be affected by this alternate dark theme instead of the default theme.
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+  --background: #121e2a;
+
+  --primaryColor: #{mat-color($dark-theme-primary-pallete)};
+  --primaryContrast: #{mat-color($dark-theme-primary-pallete, default-contrast)};
+  --accentColor: #{mat-color($dark-theme-accent-pallete)};
+  --accentContrast: #{mat-color($dark-theme-accent-pallete, default-contrast)};
+  --warnColor: #{mat-color(mat-palette($mat-red))};
+  --warnContrast: #{mat-color(mat-palette($mat-red), default-contrast)};
+  --tabsBackground: #1f2e3d;
+  --toorcomInputBackground: #1f2e3d;
+  --greyColor: #757575;
+  --disabledColor: #757575;
+  --overlayBackground: #{mat-color(map-get($dark-theme, background), card)};
+  & .header,
+  & .sidebar {
+    background-color: #1f2e3d !important;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: var(--accentColor);
+  }
+
+  .mat-menu-panel {
+    background: white!important;
+  }
+}

@@ -1,0 +1,32 @@
+@import "src/assets/variable";
+@import "src/assets/media";
+
+button {
+  display: flex;
+
+  @include phones-small() {
+    margin-left: -20px!important;
+  }
+}
+
+.language-icon {
+  height: 32px;
+  min-width: 32px;
+  width: 32px;
+  margin-right: 15px;
+  @include phones-small() {
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+  }
+}
+
+.language {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.language.menu {
+  color: var(--accentColor);
+}

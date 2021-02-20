@@ -1,0 +1,30 @@
+<button mat-button
+        [mat-menu-trigger-for]="more" style="margin-left: -5px;">
+  <span *ngIf="language === 'ru'" class="language">
+    <img src="/assets/icons/russia.svg" class="language-icon">
+    <strong>RU</strong>
+  </span>
+  <span *ngIf="language === 'en'" class="language">
+    <img src="/assets/icons/united-kingdom.svg" class="language-icon">
+    <strong>EN</strong>
+  </span>
+</button>
+
+<mat-menu xPosition="after" #more="matMenu" [overlapTrigger]="false">
+  <button mat-menu-item *ngIf="language !== 'ru'" (click)="setLang('ru')">
+    <span class="language menu">
+      <img src="/assets/icons/russia.svg" class="language-icon">
+      <span>
+        Русский язык
+      </span>
+    </span>
+  </button>
+  <button mat-menu-item *ngIf="language !== 'en'" (click)="setLang('en')">
+    <span class="language menu">
+      <img src="/assets/icons/united-kingdom.svg" class="language-icon">
+      <span>
+        English
+      </span>
+    </span>
+  </button>
+</mat-menu>

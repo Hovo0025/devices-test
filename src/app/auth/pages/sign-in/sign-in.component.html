@@ -1,0 +1,21 @@
+<app-auth-container>
+  <div class="auth-header">{{'SIGN_IN.SIGN_IN' | translate}}</div>
+  <form [formGroup]="signInForm" class="sign-up" (ngSubmit)="onSignIn()">
+    <div class="error-msg" *ngIf="serverErrorMsg">{{serverErrorMsg}}</div>
+    <mat-form-field class="example-full-width">
+      <input matInput
+             formControlName="email"
+             placeholder="E-mail">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput
+             formControlName="password"
+             placeholder="{{'SIGN_IN.PASSWORD' | translate}}">
+    </mat-form-field>
+    <button mat-stroked-button
+            color="accent"
+            [disabled]="processing || signInForm.invalid"
+            type="submit"
+            class="main">{{'SIGN_IN.SIGN_IN' | translate}}</button>
+  </form>
+</app-auth-container>

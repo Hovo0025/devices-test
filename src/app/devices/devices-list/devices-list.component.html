@@ -1,0 +1,34 @@
+<div class="container-main">
+  <ng-container *ngIf="devices.length; else loading">
+    <div class="example-container mat-elevation-z8">
+      <div class="example-table-container">
+        <table mat-table [dataSource]="dataSource" class="example-table">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef
+                (click)="onSortBy('id')"><span style="cursor: pointer;">Id</span></th>
+            <td mat-cell *matCellDef="let row">{{row.id}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef
+                (click)="onSortBy('name')"><span style="cursor: pointer;">Name</span></th>
+            <td mat-cell *matCellDef="let row">{{row.name}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="last_active">
+            <th mat-header-cell
+                *matHeaderCellDef
+                (click)="onSortBy('last_active')"><span style="cursor: pointer;">Last active</span></th>
+            <td mat-cell *matCellDef="let row">{{row.last_active | date: 'dd/MM/yyyy' }}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #loading>
+    <app-spinner></app-spinner>
+  </ng-template>
+</div>
